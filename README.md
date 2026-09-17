@@ -33,10 +33,10 @@ Universal Windows Installer is a lightweight, fast, and versatile setup utility 
 ## System Requirements for Universal Windows Installer
 
 - CPU: At least i486
-- RAM: 68 MiB of memory
+- RAM: 64 MiB of memory
 - Disk: MBR/GPT/SGI/SUN scheme and compatible hard disk controller supported by Tiny Core Linux
 - Installation media: USB or CD/DVD at least 2.5 GiB
-- Media writer: **Rufus 3.10** or newer, and **SysLinux 6.03** or newer, are required to properly prepare bootable media for Universal Windows Installer v0.3.0. **Ventoy** is also supported as an alternative to writing a dedicated ISO each time.
+- Media writer: **Rufus 3.10** and **SysLinux 6.03** are required to properly prepare bootable media for Universal Windows Installer v0.3.0. **Ventoy** is also supported as an alternative to writing a dedicated ISO each time.
 
 **NOTE:** For Windows XP x64, x86-64 Intel or AMD CPU is required!
 
@@ -50,32 +50,27 @@ Universal Windows Installer is a lightweight, fast, and versatile setup utility 
 - **Position**: Primary master (channel 0, position 0) for PATA IDE, SATA first port (port 0) for SATA IDE
 - **Filesystem**: FAT12 or FAT16 CHS
 - **Disk Layout**: Entire partition must be within first 8.3 GB (CHS-accessible)
-- **Free Space**: At least 60 MiB
 
 ### Windows NT 3.50 / 3.51 (Vanilla)
-- **Controller**: IDE or SATA (IDE)
+- **Controller**: IDE, SATA (IDE) or NVMe
 - **Position**: Primary or secondary master (channel 0 or 1, position 0) for PATA IDE 
 - **Filesystem**: FAT12 or FAT16 CHS
 - **Disk Layout**: Entire partition must be within first 8.3 GB (CHS-accessible)
-- **Free Space**: At least 60 MiB
 
 ### Windows NT 3.51 (Patched)
-- **Controller**: IDE, SATA (IDE) or AHCI
+- **Controller**: IDE, SATA (IDE), NVMe or AHCI
 - **Filesystem**: FAT12, FAT16 CHS/LBA, FAT32 CHS/LBA
-- **Free Space**: At least 70 MiB
 - **Patches Applied**: UniATA, FAT32
 
 ### Windows NT 4.00 (Vanilla)
 - **Controller**: IDE or SATA (IDE)
 - **Filesystem**: FAT12, FAT16 CHS/LBA, or NTFS
 - **Disk Layout**: Must reside within first 137.4 GB of disk
-- **Free Space**: At least 140 MiB
 
 ### Windows NT 4.00 (Patched)
-- **Controller**: IDE, SATA (IDE) or AHCI
+- **Controller**: IDE, SATA (IDE), NVMe or AHCI
 - **Filesystem**: FAT12, FAT16 CHS/LBA, FAT32 CHS/LBA NTFS
-- **Free Space**: At least 160 MiB
-- **Patches Applied**: UniATA, FAT32, USB 1.x/2.0
+- **Patches Applied**: UniATA, FAT32, USB 1.x/2.0, SSE/SSE2, ext2/3, HPFS
 
 ### Windows 2000 (Vanilla)
 - **Controller**: IDE or SATA (IDE)
@@ -84,32 +79,33 @@ Universal Windows Installer is a lightweight, fast, and versatile setup utility 
 
 ### Windows 2000 (Patched)
 - **Controller**: IDE, SATA (IDE), AHCI or NVMe
-- **Filesystem**: FAT12, FAT16 CHS/LBA, FAT32 CHS/LBA or NTFS
+- **Filesystem**: FAT12, FAT16 CHS/LBA, FAT32 CHS/LBA, NTFS or ext2/3
 - **Free Space**: At least 980 MiB
-- **Patches Applied**: ACPI, USB 1.x/2.0/3.x, AHCI, NVMe, exFAT
+- **Patches Applied**: ACPI, USB 1.x/2.0/3.x, AHCI, NVMe, exFAT, ext2/3, HPFS
 
 ### Windows XP (Vanilla)
 - **Controller**: IDE or SATA (IDE)
 - **Filesystem**: FAT12, FAT16 CHS/LBA, FAT32 CHS/LBA or NTFS
-- **Free Space**: At least 1.5 GiB for x86, 2.2 GiB for x64
 
 ### Windows XP (Patched)
 - **Controller**: IDE, SATA (IDE), AHCI, RAID, eMMC or NVMe
-- **Filesystem**: FAT12, FAT16 CHS/LBA, FAT32 CHS/LBA or NTFS
-- **Free Space**: At least 1.5 GiB for x86, 2.2 GiB for x64
-- **Patches Applied**: ACPI, USB 3.x, AHCI, RAID, eMMC, NVMe
+- **Filesystem**: FAT12, FAT16 CHS/LBA, FAT32 CHS/LBA, NTFS, BTRFS or ext2/3
+- **Patches Applied**: ACPI, USB 3.x, AHCI, RAID, eMMC, NVMe, ext2/3, BTRFS, AVX/AVX2 (x86 only), HPFS (x86 only)
 
 ### Windows Vista
-- **Controller**: IDE, SATA (IDE), AHCI, RAID or NVMe
+- **Controller**: IDE, SATA (IDE), NVMe (for only patched ediitons) or AHCI
 - **Filesystem**: NTFS
-- **Free Space**: At least 15 GiB
-- **Boot**: Installed with BOOTMGR as the MBR bootloader
+- **Patches Applied**: ACPI, USB 3.x, AHCI, RAID, eMMC, NVMe, ext2/3, BTRFS, HPFS (x86 only)
 
 ### Windows 7
-- **Controller**: IDE, SATA (IDE), AHCI, RAID or NVMe
+- **Controller**: IDE, SATA (IDE), NVMe (for only patched ediitons) or AHCI
 - **Filesystem**: NTFS
-- **Free Space**: At least 16 GiB for x86, 20 GiB for x64
-- **Boot**: Installed with BOOTMGR as the MBR bootloader
+- **Patches Applied**: ACPI, USB 3.x, AHCI, RAID, eMMC, NVMe, ext2/3, BTRFS, HPFS (x86 only)
+
+### Windows 8.0
+- **Controller**: IDE, SATA (IDE), NVMe or AHCI
+- **Filesystem**: NTFS, exFAT
+- **Patches Applied**: ACPI, USB 3.x, AHCI, RAID, eMMC, NVMe, ext2/3, BTRFS, HPFS (x86 only), CPU Features Patch (x86 only)
 
 ---
 
