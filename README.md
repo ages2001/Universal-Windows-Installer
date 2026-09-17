@@ -38,7 +38,7 @@ Universal Windows Installer is a lightweight, fast, and versatile setup utility 
 - Installation media: USB or CD/DVD at least 2.5 GiB
 - Media writer: **Rufus 3.10** and **SysLinux 6.03** are required to properly prepare bootable media for Universal Windows Installer v0.3.0. **Ventoy** is also supported as an alternative to writing a dedicated ISO each time.
 
-**NOTE:** For Windows XP x64, x86-64 Intel or AMD CPU is required!
+**NOTE:** For x64 OSes, x86-64 (EM64T) capable CPU is required!
 
 ---
 
